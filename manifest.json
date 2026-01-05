@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Headliner",
   "version": "1.0.0",
-  "description": "Analyzes headings on the current page using the side panel.",
+  "description": "Analyze and visualize the heading structure of any webpage. Perfect for content creators, developers, and accessibility auditors.",
   "permissions": [
     "activeTab",
     "scripting",
