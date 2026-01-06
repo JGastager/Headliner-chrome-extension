@@ -76,3 +76,14 @@ chrome.runtime.onMessage.addListener((message) => {
         updateHeadlines();
     }
 });
+
+// Listen for navigation/route changes in the active tab
+chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+    if (changeInfo.status === 'complete' && tab.active) {
+        updateHeadlines();
+    }
+});
+
+chrome.tabs.onActivated.addListener(() => {
+    updateHeadlines();
+});
