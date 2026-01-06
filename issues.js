@@ -1,6 +1,6 @@
 // --- CONFIGURATION ---
 // Options: 'error', 'warning', 'off'
-const ISSUE_CONFIG = {
+let ISSUE_CONFIG = {
     noH1:          'error',    // Missing H1
     multipleH1:    'warning',  // More than one H1
     hierarchy:     'warning',  // e.g. H2 followed by H4
@@ -9,6 +9,13 @@ const ISSUE_CONFIG = {
     duplicateText: 'warning',  // Multiple headings with exact same text
     longHeading:   'warning'   // Headings > 120 chars
 };
+
+// Load settings from Chrome storage
+chrome.storage.sync.get('issueConfig', (data) => {
+    if (data.issueConfig) {
+        ISSUE_CONFIG = { ...ISSUE_CONFIG, ...data.issueConfig };
+    }
+});
 
 // --- RULES ---
 const ISSUE_RULES = {

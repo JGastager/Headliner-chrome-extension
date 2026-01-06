@@ -1,12 +1,12 @@
 // Default configuration
 const DEFAULT_CONFIG = {
-    noH1: 'error',
-    multipleH1: 'warning',
-    hierarchy: 'warning',
-    emptyHeading: 'error',
-    h1NotFirst: 'warning',
-    duplicateText: 'warning',
-    longHeading: 'warning'
+    noH1:          'error',    // Missing H1
+    multipleH1:    'warning',  // More than one H1
+    hierarchy:     'warning',  // e.g. H2 followed by H4
+    emptyHeading:  'error',    // e.g. <h2></h2>
+    h1NotFirst:    'warning',  // H1 should usually be the top heading
+    duplicateText: 'warning',  // Multiple headings with exact same text
+    longHeading:   'warning'   // Headings > 120 chars
 };
 
 // Load saved settings
@@ -41,11 +41,11 @@ function saveSettings() {
         // Show status message
         const status = document.getElementById('status');
         status.textContent = 'Settings saved!';
-        status.style.color = '#4CAF50';
+        status.classList.add('success', 'show');
         
-        // Clear message after 2 seconds
         setTimeout(() => {
             status.textContent = '';
+            status.classList.remove('success', 'show');
         }, 2000);
     });
 }
@@ -57,10 +57,11 @@ function resetSettings() {
         
         const status = document.getElementById('status');
         status.textContent = 'Settings reset to defaults!';
-        status.style.color = '#2196F3';
+        status.classList.add('success', 'show');
         
         setTimeout(() => {
             status.textContent = '';
+            status.classList.remove('success', 'show');
         }, 2000);
     });
 }

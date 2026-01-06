@@ -69,7 +69,7 @@ a:hover svg path {
 
 .issue-config {
     background: #313131;
-    padding: 20px;
+    padding: 12px 18px;
     border-radius: 8px;
 }
 
@@ -93,21 +93,20 @@ a:hover svg path {
 
 .config-item select {
     padding: 6px 12px;
-    border: 1px solid #414141;
+    border: 1px solid #3f3f3f;
     border-radius: 4px;
-    background-color: #414141;
+    background-color: #3f3f3f;
     color: #f0f0f0;
     cursor: pointer;
     font-size: 0.9em;
     min-width: 120px;
     font-weight: 600;
     height: 32px;
+    transition: all 0.2s;
 }
 
 .config-item select:focus {
     outline: none;
-    border-color: #84cc16;
-    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
 }
 
 button {
@@ -141,25 +140,26 @@ button {
 }
 
 #status {
-    margin-top: 15px;
-    padding: 10px;
+    margin-top: 24px;
+    padding: 6px 8px;
     border-radius: 4px;
-    font-size: 0.9em;
-    display: none;
+    font-size: 14px;
+    opacity: 0;
+    transition: all 0.2s ease;
+    background-color: transparent;
+    color: transparent;
 }
 
 #status.show {
-    display: block;
+    opacity: 1;
 }
 
 #status.success {
-    background-color: rgba(16, 185, 129, 0.2);
+    background-color: #10b9813f;
     color: #10b981;
-    border: 1px solid rgba(16, 185, 129, 0.3);
 }
 
 #status.error {
-    background-color: rgba(239, 68, 68, 0.2);
+    background-color: #ef44443f;
     color: #ef4444;
-    border: 1px solid rgba(239, 68, 68, 0.3);
 }
